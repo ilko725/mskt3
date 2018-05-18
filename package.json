@@ -1,0 +1,25 @@
+{
+    "name": "mskt3",
+    "version": "1.0.0",
+    "description": "mskt3 task. date or hello",
+    "main": "index.js",
+    "dependencies": {
+        "commander": "^2.15.1"
+    },
+    "scripts": {
+        "test": "mskt3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ilko725/mskt3.git"
+    },
+    "keywords": [
+        "mskt"
+    ],
+    "author": "ilko725",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ilko725/mskt3/issues"
+    },
+    "homepage": "https://github.com/ilko725/mskt3#readme"
+}
