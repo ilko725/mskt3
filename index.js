@@ -11,10 +11,10 @@ program
         var exitProgram = function() { process.exitCode = 1; }
         if (user_input === 'date') {
             console.log('This date is: ' + currentDate);
-            process.exitCode = 1;
+            process.exit(1);
         } else if (user_input === 'hello') {
             console.log('Hello World')
-            setTimeout(exitProgram, 1500);
+            setTimeout(process.exit(1), 1000);
         };
     });
 
