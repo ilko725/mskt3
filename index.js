@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var program = require('commander');
 
 /*program 
     .version('1.0.0')
@@ -16,16 +15,9 @@ var program = require('commander');
             setTimeout(process.exit(1), 1000);
         };
     });
+*/
 
-
-program
-    .version('0.1.0')
-    .option('-d, --input [name]', 'User input')
-    .parse.process(process.argv);
-
-console.log('  - %s cheese', program.cheese);
-console.log('you have choosen hello')*/
-
+var program = require('commander');
 
 process.stdin.resume()
 
@@ -34,7 +26,30 @@ program
     .option('-i, --input [name]', 'User input')
     .parse(process.argv)
 
-if (program.input === 'date') {
+function dateHelloError(value) {
+    return new Promice(function(resolve, reject) {
+        switch (program.input) {
+            case 'date':
+                console.log(new Date());
+                process.exit(2);
+                break;
+            case 'hello':
+                setTimeout(function() {
+                    console.log("hello world");
+                    process.exit(2);
+                }, 1000);
+                break;
+            default:
+                console.log("Oh, g*vno! An error occured! Only 'date' or 'hello' appropriate.");
+                process.exit(2);
+                break;
+        };
+    })
+}
+dateHelloError(program.input);
+/*throw new Error('Oh, g*vno! Only "date" or "hello" appropriate.');*/
+
+/*if (program.input === 'date') {
     console.log(new Date());
     process.exit(0)
 } else {
@@ -42,4 +57,4 @@ if (program.input === 'date') {
         console.log("hello world")
         process.exit(2)
     }, 1000)
-}
+}*/
